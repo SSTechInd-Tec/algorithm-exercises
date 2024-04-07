@@ -75,13 +75,13 @@ class LinkedList:
         if index == 0:
             self.add(data)
         
-        if index > 0:
+        else:
             new_node = Node(data)
 
             posistion = index
             current = self.head
 
-            while posistion > 1:
+            while posistion > 1 and current.next_node:
                 current = current.next_node
                 posistion -= 1
 
@@ -90,7 +90,7 @@ class LinkedList:
 
 
             prev_node.next_node = new_node
-            new_node.new_node = next_node
+            new_node.next_node = next_node
 
     def remove(self, key):
         """
